@@ -33,7 +33,7 @@ run "pip install python-decouple"
 
 - then, write the key in the first line of .env file, as follow: 
 
-SECRET_KEY = 'django-insecure-YOUR-KEY-HERE'
+SECRET_KEY = 'django-insecure-YOUR_KEY_HERE'
 
 ### 5. Run local server
 
