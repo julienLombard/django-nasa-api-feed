@@ -13,9 +13,9 @@ NASA feed app
 
 run "python -m venv env"
 
-Windows : run "env\Scripts\activate"
+on Windows : run "env\Scripts\activate"
 
-Linux : run "source env/bin/activate"
+on Linux : run "source env/bin/activate"
 
 ("deactivate" to desactive it, later)
 
