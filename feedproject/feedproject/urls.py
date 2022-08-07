@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from listapp.views import home, object_detail
+from listapp.views import home, object_detail, list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
-    path('object/<int:id>/', object_detail, name='object-detail')
+    path('<str:start_date>/<str:end_date>/', list, name='list'),
+    path('object/<int:id>/<str:start_date>/<str:end_date>/',
+         object_detail, name='object-detail')
 ]
