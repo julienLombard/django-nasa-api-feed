@@ -9,13 +9,13 @@ NASA feed app
 
 ### 2. Create virtual environment in django-nasa-feed-app folder
 
-Windows:
-
 - In command line interface, run in django-nasa-feed-app folder
 
 run "python -m venv env"
 
-run "env\Scripts\activate"
+Windows: run "env\Scripts\activate"
+
+Linux: run "source env/bin/activate"
 
 ("deactivate" to desactive it, later)
 
