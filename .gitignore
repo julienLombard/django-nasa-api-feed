@@ -1,2 +1,4 @@
 env/
 feedproject/feedproject/.env
+
+feedproject/feedproject/__pycache__/
