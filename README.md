@@ -9,7 +9,7 @@ NASA feed app
 
 ### 2. Create virtual environment in django-nasa-feed-app folder
 
-- In command line interface, run in django-nasa-feed-app folder
+- in command line interface, run in django-nasa-feed-app folder
 
 run "python -m venv env"
 
