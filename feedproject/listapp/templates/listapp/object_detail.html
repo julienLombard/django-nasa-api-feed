@@ -5,21 +5,25 @@
 <div>
     
     <div class="container">
-      <div class="row mb-2">
-        <div class="col align-self-center">
-            <h2>{{id}}</h2>
-            <p>5 derniers passages</p>
+      <div class="row">
+        <div class="col mb-2">
+          <div class="row">
+            {% if id %}
+              <h2>{{id}}</h2>
+            {% endif %}
+            <p>Liste des 5 derniers passages</p>
             <a href="{% url 'list' start_date end_date %}">retour liste</a>
             <br>
-            {% for object in object_data.close_approach_data|slice:":5" %}
-            <div class="row mb-2 bg-light">
-              <div class="col align-self-center">
-                <h3>Passage: {{forloop.counter}}</h3>
-                <p>Date d'approche: {{ object.close_approach_date }}</p>
-                <p>Distance: {{ object.miss_distance.kilometers }} klm</p>
-              </div>
+          </div>
+          {% for object in object_data.close_approach_data|slice:":5" %}
+          <div class="row  justify-content-center">
+            <div class="col-3  mb-2 mt-2  bg-light">
+              <h3 class="h5">Passage {{forloop.counter}}</h3>
+              <p>Date: {{ object.close_approach_date }}</p>
+              <p>Distance: {{ object.miss_distance.kilometers }} klm</p>
             </div>
-            {% endfor %}  
+          </div>
+          {% endfor %}  
         </div>
       </div>
     </div>  

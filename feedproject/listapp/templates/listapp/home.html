@@ -2,30 +2,31 @@
 
 {% block content %}
 
-<div>
+<div class="container nasa-form-div">
+  <p>Choisissez une date pour connaitre le nombre d'objets qui passent à coté de la Terre, à cette époque.</p>
   <form action="" method="post" novalidate>
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Envoyer">
+    <input type="submit" value="Send">
   </form>
 </div>
 
-<div>
+<div class="container">
   {% if element_count %}
-    <p>There are <strong>{{ element_count }}</strong> elements near planeth hearth right now.</p>
-  <br>
+    <p class="m-3">Il y a <strong>{{ element_count }}</strong> élements prochent de la planète Terre, à cette date.</p>
   {% endif %}
   
   <div class="container">
     {% for object in near_earth_objects %}
-    <div class="row mb-2 bg-light">
-      <div class="col align-self-center">
-        <h3>{{ object.name }}</h3>
-        <p>Taille min: {{ object.estimated_diameter.kilometers.estimated_diameter_min }}</p>
-        <p>Taille max: {{ object.estimated_diameter.kilometers.estimated_diameter_max }}</p>
-        <p>Date d'approche: {{ object.close_approach_data.0.close_approach_date }}</p>
-        <p>Distance: {{ object.close_approach_data.0.miss_distance.kilometers }} klm</p>
-        <a href="{% url 'object-detail' object.id start_date end_date %}">{{ object.name }}</a>
+    <div class="row justify-content-center">
+      <div class="col-3 bg-light card mb-2 p-2" style="width: 18rem;">
+        <h3 class="card-title">{{ object.name }}</h3>
+        <br>
+        <p class="m-0">Taille min : {{ object.estimated_diameter.kilometers.estimated_diameter_min }}</p>
+        <p class="m-0">Taille max: {{ object.estimated_diameter.kilometers.estimated_diameter_max }}</p>
+        <p class="m-1">Date d'approche: {{ object.close_approach_data.0.close_approach_date }}</p>
+        <p class="m-1">Distance: {{ object.close_approach_data.0.miss_distance.kilometers }} klm</p>
+        <a href="{% url 'object-detail' object.id start_date end_date %}">voir détails</a>
       </div>
     </div>
     {% endfor %}  

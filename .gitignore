@@ -4,3 +4,6 @@ feedproject/feedproject/.env
 feedproject/feedproject/__pycache__/
 feedproject/feedproject/__pycache__/urls.cpython-310.pyc
 feedproject/feedproject/__pycache__/settings.cpython-310.pyc 
+
+feedproject/listapp/__pycache__/
+feedproject/listapp/__pycache__/views.cpython-310.pyc
