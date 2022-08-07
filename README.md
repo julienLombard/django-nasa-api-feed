@@ -39,7 +39,7 @@ SECRET_KEY = 'django-insecure-YOUR-KEY-HERE'
 
 run  "python manage.py runserver" 
 
-go to the server link in the command line interface
+- go to the server link in the command line interface
 
 (ctrl + c to escape server, later)
 
