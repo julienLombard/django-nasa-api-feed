@@ -1,2 +1,2 @@
 # django-nasa-api-feed
-NASA api feed 
+NASA feed app 
