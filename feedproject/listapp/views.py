@@ -31,3 +31,15 @@ def home(request):
         return render(request, 'listapp/home.html', {
             'form': form,
         })
+
+
+def object_detail(request, id):
+
+    response = requests.get(
+        f'https://api.nasa.gov/neo/rest/v1/neo/{id}?api_key=DEMO_KEY')
+    object_data = response.json()
+
+    return render(request, 'listapp/object_detail.html', {
+        'id': id,
+        'object_data': object_data,
+    })
