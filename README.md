@@ -13,6 +13,8 @@ NASA feed app
 
 run "python -m venv env"
 
+- active environnement
+
 on Windows : run "env\Scripts\activate"
 
 on Linux : run "source env/bin/activate"
