@@ -1,0 +1,28 @@
+{% extends "listapp/base.html" %}
+
+{% block content %}
+
+<div>
+    
+    <div class="container">
+      <div class="row mb-2">
+        <div class="col align-self-center">
+            <h2>{{id}}</h2>
+            <p>5 derniers passages</p>
+            <a href="{% url 'list' start_date end_date %}">retour liste</a>
+            <br>
+            {% for object in object_data.close_approach_data|slice:":5" %}
+            <div class="row mb-2 bg-light">
+              <div class="col align-self-center">
+                <h3>Passage: {{forloop.counter}}</h3>
+                <p>Date d'approche: {{ object.close_approach_date }}</p>
+                <p>Distance: {{ object.miss_distance.kilometers }} klm</p>
+              </div>
+            </div>
+            {% endfor %}  
+        </div>
+      </div>
+    </div>  
+  </div>
+
+{% endblock content %}
